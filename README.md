@@ -111,3 +111,13 @@ Le contenu de la page a été sauvegardé dans /tmp/web_page.
 ```
 
 ```
+
+## 4. Un chat fonctionnel
+
+🌞 chat_server_ii_4.py
+
+[chat_server_ii_4.py](./chat_server_ii_4.py)
+
+```
+
+```

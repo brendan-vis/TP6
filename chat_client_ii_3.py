@@ -10,13 +10,14 @@ async def async_input(writer):
         await writer.drain()
 
 async def async_receive(reader):
-      # lire des données qui arrive du serveur
-      data = await reader.read(1024)
-      if data:
-          # print("Il n'y a pas de msg")
-          print(data.decode())
-          
-      # print(data.decode())
+      while True:
+        # lire des données qui arrive du serveur
+        data = await reader.read(1024)
+        if data:
+            # print("Il n'y a pas de msg")
+            print(data.decode())
+            
+        # print(data.decode())
 
 
 async def main():
