@@ -1,5 +1,6 @@
 import sys
 import requests
+import time
 
 def get_content(url):
     return url
@@ -11,7 +12,10 @@ def write_content(content, file):
     f.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    start = time.time()
+    for i in range(10000):
+        i**i
+    if len(sys.argv) < 2:
         print("Usage: python web_sync.py <URL>")
         sys.exit(1)
 
@@ -24,3 +28,4 @@ if __name__ == "__main__":
         print("Le contenu de la page a été sauvegardé dans /tmp/web_page.")
     except Exception as e:
         print(f"Erreur : {e}")
+print(time.time() - start)

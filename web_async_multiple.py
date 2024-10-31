@@ -2,6 +2,7 @@ import sys
 import requests
 import aiofiles
 import asyncio
+import time
 
 async def get_content(url):
     return url
@@ -14,8 +15,12 @@ async def write_content(content, file):
 
 
 async def main ():
+    start = time.time()
+    for i in range(10000):
+        i**i
     if __name__ == "__main__":
-        if len(sys.argv) != 2:
+        if len(sys.argv) < 2:
+            print(len(sys.argv))
             print("Usage: python web_sync.py <URL>")
             sys.exit(1)
 
@@ -27,5 +32,6 @@ async def main ():
             print("Le contenu de la page a été sauvegardé dans /tmp/web_page.")
         except Exception as e:
             print(f"Erreur : {e}")
+    print(time.time() - start)
 if __name__ == "__main__":
     asyncio.run(main())
